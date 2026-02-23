@@ -1,0 +1,65 @@
+                  
+package Views;
+
+import Models.Users;
+import Controllers.UserController;
+
+public class RegisterFrame extends javax.swing.JFrame {
+
+    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(RegisterFrame.class.getName());
+
+    public RegisterFrame() {
+        initComponents();
+    }
+
+    private void tf_fnameActionPerformed(java.awt.event.ActionEvent evt) {
+    }
+
+    private void tf_lnameActionPerformed(java.awt.event.ActionEvent evt) {
+    }
+
+    private void tf_usernActionPerformed(java.awt.event.ActionEvent evt) {
+    }
+
+    private void btn_resgisterActionPerformed(java.awt.event.ActionEvent evt) {
+        Users user = new Users();
+        UserController usercon = new UserController();
+
+        user.setFirstname(tf_fname.getText());
+        user.setLastname(tf_lname.getText());
+        user.setUsername(tf_usern.getText());
+        user.setPassword(tf_passw.getText());
+
+        usercon.register(user);
+
+        LoginFrame lf = new LoginFrame();
+        lf.setVisible(true);
+        this.dispose();
+    }
+
+    private void btn_loginActionPerformed(java.awt.event.ActionEvent evt) {
+        LoginFrame lf = new LoginFrame();
+        lf.setVisible(true);
+        this.dispose();
+    }
+
+    public static void main(String args[]) {
+        java.awt.EventQueue.invokeLater(() -> new RegisterFrame().setVisible(true));
+    }
+
+    private javax.swing.JButton btn_login;
+    private javax.swing.JButton btn_resgister;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JTextField tf_fname;
+    private javax.swing.JTextField tf_lname;
+    private javax.swing.JPasswordField tf_passw;
+    private javax.swing.JTextField tf_usern;
+}
+    // Variables declaration - do not modify                     
+    // End of variables declaration                   
+
